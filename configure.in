@@ -1,0 +1,53 @@
+dnl Process this file with autoconf to produce a configure script.
+
+
+AC_INIT(gnome-file-manager, 1.0.2)
+AC_CONFIG_SRCDIR(configure.in)
+AM_INIT_AUTOMAKE(AC_PACKAGE_NAME, AC_PACKAGE_VERSION)
+
+##dnl Add PONG support
+##AM_PROG_XML_I18N_TOOLS
+##AM_PROG_PONG
+
+AM_SANITY_CHECK
+AM_MAINTAINER_MODE
+
+AC_PROG_INTLTOOL([0.21])
+
+AC_PROG_CC
+AC_PROG_CPP
+AC_PROG_INSTALL
+AC_PROG_MAKE_SET
+
+# gnome, gtk+, ...
+PKG_CHECK_MODULES(GFM, libgnomeui-2.0 libglade-2.0)
+
+AC_SUBST(GFM_CFLAGS)
+AC_SUBST(GFM_LIBS)
+
+
+dnl Add the languages which your application supports here.
+ALL_LINGUAS=""
+AM_GLIB_GNU_GETTEXT
+
+GETTEXT_PACKAGE=AC_PACKAGE_NAME
+AC_SUBST(GETTEXT_PACKAGE)
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", "i don't know what should be here")
+
+AM_GLIB_GNU_GETTEXT
+AC_PROG_INTLTOOL
+
+
+AC_OUTPUT([
+Makefile
+src/Makefile
+po/Makefile.in
+testing/Makefile
+pixmaps/Makefile
+help/Makefile
+help/C/Makefile
+intltool-extract
+intltool-merge
+intltool-update
+])
+

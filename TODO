@@ -1,0 +1,18 @@
+items with high priority are marked with !
+
+TODO until 2.0
+---------------------------------------------
+  ! handle .desktop files
+  * add schema to GConf
+  * change group inside GtkTreeView ?
+  ! ask username/password in case of 'Login Incorrect' error
+  ! mime-actions -> popup-menu
+  ! support sessions
+  * command line support
+  ! gray +/-/* to (un)select all files -- add 'Enter mask' dialog
+  * Lister:
+  	- configurable
+	- error reporting
+	- handle other formats (at least images, HTML will be nice)
+		? use gnome_vfs_mime_get_default_component()
+	- icon ;-)

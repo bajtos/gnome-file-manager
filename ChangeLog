@@ -1,0 +1,13 @@
+18.09.2002 version 1.0.1 released
+	* mime_actions.c: 
+	fixed SegmentationFault when no application/handler is found
+	chdir to symlink error fixed
+	
+	* file_list_interface.c:
+	changed initialization of file_list_column_titles (it didn't work
+	with gettext)
+	
+	* Makefile.am, configure.in:
+	cleanup
+
+

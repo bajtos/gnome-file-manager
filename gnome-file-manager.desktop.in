@@ -1,0 +1,9 @@
+[Desktop Entry]
+Icon=gfm.png
+_Name=Gnome FileManager
+_Comment=Gnome clone of popular Windows Commander
+Exec=gfm
+Terminal=0
+Type=Application
+DocPath=gnome-file-manager/gfm.xml
+Categories=Application;Utility;

@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+  <!ENTITY legal SYSTEM "legal.xml">
+  <!ENTITY appversion "1.0">
+  <!ENTITY manrevision "1.0">
+  <!ENTITY date "September 2002">
+  <!ENTITY app "<application>Gnome FileManager</application>">
+  <!ENTITY appname "gfm">
+  <!ENTITY version "0.1">
+]>
+
+<!-- =============Document Header ============================= -->
+<article id="index" lang="en">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+<articleinfo>
+ <title>&app; Manual v&manrevision;</title>
+
+ <copyright>
+  <year>2002</year>
+  <holder>Miroslav 'Mirco' Bajtoš</holder>
+ </copyright>
+<!-- translators: uncomment this:
+
+  <copyright>
+   <year>2002</year>
+   <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+  </copyright>
+
+   -->
+
+   &legal;
+   <!-- This file  contains link to license for the documentation (GNU FDL), and 
+        other legal stuff such as "NO WARRANTY" statement. Please do not change 
+	any of this. -->
+
+    <authorgroup> 
+      <author> 
+	<firstname>Miroslav</firstname> 
+	<surname>Bajtoš</surname> 
+	<affiliation> 
+	  <address> <email>mirco@matfyz.cz</email> </address> 
+	</affiliation> 
+      </author> 
+<!-- This is appropriate place for other contributors: translators,
+      maintainers,  etc. Commented out by default.
+       <othercredit role="translator">
+	<firstname>Latin</firstname> 
+	<surname>Translator 1</surname> 
+	<affiliation> 
+	  <orgname>Latin Translation Team</orgname> 
+	  <address> <email>translator@gnome.org</email> </address> 
+	</affiliation>
+	<contrib>Latin translation</contrib>
+      </othercredit>
+-->
+    </authorgroup>
+    
+    <releaseinfo>This manual describes version &appversion; of &appname;.
+    </releaseinfo>
+    <!-- The following feedback information only applies to appliactions
+    listed in bugzilla.gnome.org and bugzilla.ximian.com. For other
+    applications, please provide your own feedback info or remove thsi
+    section altogether -->
+</articleinfo>
+
+  <indexterm zone="index"> 
+    <primary>gfm</primary> 
+  </indexterm>
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+<sect1 id="gfm-intro">
+ <title>Introduction</title>
+  <para>
+		<application>&app;</application> is supposed to be Gnome clone of popular Windows Commander.
+		However, you can use it as faster/more effective/better(?) replacement for <application>Nautilus</application>. 
+  </para>
+</sect1>
+
+<!-- ============ Getting Started =========================== -->
+<sect1 id="gfm-getting-started">
+	<title>Getting Started</title>
+	<sect2 id="gfm-to-start">
+		<title>To Start Gnome FileManager</title>
+		<para> You can start <application>&app;</application> in the folowing ways: </para>
+		<variablelist>
+		  <varlistentry>
+				<term><guimenu>Applications</guimenu> menu</term>
+				<listitem><para>Choose
+					<menuchoice>
+						<guisubmenu>Accessories</guisubmenu>
+						<guisubmenu>Gnome FileManager</guisubmenu>
+					</menuchoice></para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Command line</term>
+				<listitem><para>Type <command>gfm</command>, then press <keycap>Return</keycap>.</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</sect2>
+
+	<sect2 id="gfm-when-you-start">
+		<title>When You Start &app;</title>
+		<para>When you start <application>&app;</application>, the following window is displayed:</para>
+		<figure id="gfm-window-first">
+			<title>&app; window</title>
+			<screenshot>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="figures/gfm-window-first.png" format="PNG"/>
+					</imageobject>
+					<textobject><phrase>Screenshot of the main window</phrase></textobject>
+				</mediaobject>
+			</screenshot>
+		</figure>
+
+		<para>The <application>&app;</application> window contains the following elements: </para>
+		<variablelist>
+			<varlistentry>
+				<term>Menubar</term>
+				<listitem>
+					<para>The menus on the menubar contains few commands that are not mapped to keyboard shortcuts,
+						mainly configuration and help </para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Panels</term>
+				<listitem>
+					<para>There are two panels (left and right) as they are in all file managers since great Norton Commander.</para>
+					<para>You can switch between them with <keycap>Tab</keycap>.</para>
+					<para>Each panel contains four basic items:</para>
+					<variablelist>
+						<varlistentry>
+							<term>Working directory</term>
+							<listitem><para>
+									Here you see path which is listed in file-list. 
+								</para>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term>Disk free</term>
+							<listitem><para>
+									In upper-right corner of each panel is information about free space in working directory
+								</para>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term>File list</term>
+							<listitem><para>
+									The dominating part of each panel is (scrollable) list of files. 
+									Here you see informations about files like name, size, owner, etc.
+								</para>
+							</listitem>
+						</varlistentry>
+						<varlistentry>
+							<term>Selection info</term>
+							<listitem><para>
+									Information about selected files (count and size).
+								</para>
+							</listitem>
+						</varlistentry>
+					</variablelist>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</sect2>
+</sect1>
+
+<!-- ========================= USAGE  ======================== -->
+<sect1 id="gfm-usage">
+	<title>Usage</title>
+	<sect2 id="gfm-usage-chdir">
+		<title>Changing working directory</title>
+		<variablelist>
+			<varlistentry>
+				<term>Inside list</term>
+				<listitem>
+					<para>
+						Simply select directory (with mouse or keyboard) and press <keycap>Return</keycap> or double-click with mouse.
+					</para>
+					<para>
+						Use <keycap>Backspace</keycap> to enter parent directory
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Quick change</term>
+				<listitem>
+					<para>
+						You can edit 'working-directory-entry' and quickly change to other directory.
+						Since <application>&app;</application> is using Gnome VFS, you can type also full uri
+						like ftp://ftp.linux.org, or ftp://login:password@my.computer.net.
+					</para>
+					<para> Passwords are not displayed, but they are kept and automatically added to uri
+							when you change to another directory with same protocol://user@host
+					</para>
+					<para>
+						You can use arrow button to access history of previous quick-changed locations.
+						History is kept separately for each panel and is not saved like working directory
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</sect2>
+	
+	<sect2 id="gfm-usage-fileops">
+		<title>File operations</title>
+		<variablelist>
+			<varlistentry>
+				<term>More info</term>
+				<listitem>
+					<para>
+						You can get more info about file if you hold mouse cursor above field you are interested in.
+						After small amount of time popup window will appear with additional informations, like
+						full file name (useful for names like 'What Women Want Divx5 ripped by Johny.ENG.avi'),
+						or mime-type (in field with icon), etc. 
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Execute programs, launch applications</term>
+				<listitem>
+					<para>
+						If you want to execute program or run application associated with some file, just double click that file
+						or select it and press <keycap>Return</keycap>. 
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Edit, view</term>
+				<listitem>
+					<para>
+						Select desired file and then press F3 to view (F4 to edit). Note that built-in viewer supports only text now.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Copy, move</term>
+				<listitem>
+					<para>
+						Load source directory into one panel, destination to the other. Then select files you want to copy/move
+						and press <keycap>F5</keycap>/<keycap>F6</keycap>.
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Create directory</term>
+				<listitem>
+					<para>
+						Press F7, enter the name and press <keycap>Return</keycap>
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Delete</term>
+				<listitem>
+					<para>
+						Select files you want to delete and press <keycap>F8</keycap>.
+					</para>
+					<warning>
+						<para>This is pernament delete, not throwing to the trash!</para>
+					</warning>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Create symbolic link</term>
+				<listitem>
+					<para>
+						Load destination directory to the other panel. Then select source file (where link should point to) and press
+						<keycap>Ctrl-F5</keycap>
+					</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Rename, change permissions</term>
+				<listitem>
+					<para>
+						Select file and then click on name/permissions.
+					</para>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</sect2>
+	
+	<sect2 id="gfm-usage-select">
+		<title>Selecting multiple files</title>
+		<variablelist>
+			<varlistentry>
+				<term>Mouse</term>
+				<listitem><para>Hold down <keycap>Ctrl</keycap> and click on files you want to select</para></listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Keyboard</term>
+				<listitem>
+					<variablelist>
+						<varlistentry>
+							<term>Select all/none</term>
+							<listitem><para>Press <keycap>+</keycap>/<keycap>-</keycap> to select/unselect all files</para></listitem>
+						</varlistentry>
+						<varlistentry>
+							<term>Continuous selection</term>
+							<listitem><para>Hold down <keycap>Shift</keycap> and move with arrows.</para></listitem>
+						</varlistentry>
+						<varlistentry>
+							<term>Discrete selection</term>
+							<listitem><para>Hold down <keycap>Ctrl</keycap> and move with arrows. Press <keycap>Space</keycap>
+									on files you want to select</para></listitem>
+						</varlistentry>
+					</variablelist>
+				</listitem>
+			</varlistentry>
+		</variablelist>
+	</sect2>
+</sect1>	
+
+<!-- ========================== SETTINGS ====================== -->
+
+<sect1 id="gfm-sts">
+	<title>Settings</title>
+	<sect2 id="gfm-sts-shf">
+		<title>Show hidden files</title>
+		<para>
+			Toggle checkbox <guisubmenu>Preferences</guisubmenu>/<guimenuitem>Show hidden files</guimenuitem>.
+		</para>
+		<para>
+			This setting is saved/loaded only at the start/end.
+		</para>
+	</sect2>
+	<sect2 id="gfm-sts-cls">
+		<title>Columns in file list</title>
+		<para> You can adjust amount of information displayed in 
+			<guisubmenu>Settings</guisubmenu>/<guimenuitem>Preferences</guimenuitem>.
+		</para>
+		<figure id="gfm-window-preferences">
+			<title>&app; preferences</title>
+			<screenshot>
+				<mediaobject>
+					<imageobject>
+						<imagedata fileref="figures/gfm-window-preferences.png" format="PNG"/>
+					</imageobject>
+					<textobject><phrase>Screenshot of the preferences window</phrase></textobject>
+				</mediaobject>
+			</screenshot>
+		</figure>
+
+		<para>
+			In the left list you see columns currently viewed, in the right list available columns.
+			Use arrows to move columns between these list or change order of columns. 
+		</para>
+		
+		<itemizedlist mark="opencircle">
+			<listitem> <para> these changes are applied immediately to all running instances! </para></listitem>
+			<listitem> <para> it is possible to have more columns of the same type </para></listitem>
+		</itemizedlist>
+	</sect2>
+	<sect2 id="gfm-sts-cw">
+		<title>Column widths</title>
+		<para>
+			You can resize columns in standard way with mouse. This change is applied to all instances.
+		</para>
+	</sect2>
+	<sect2 id="gfm-sts-cs">
+		<title>Sorting</title>
+		<para>
+			Default sorting is by name. You can click on header of column to change sorting. This is not saved.
+		</para>
+	</sect2>
+	<sect2 id="gfm-sts-pw">
+		<title>Size of panels</title>
+		<para>
+			Between panels is handle that you can drag to resize panels.
+		</para>
+	</sect2>
+</sect1>
+
+<sect1 id="gfm-shortcuts">
+	<title>Keyboard shortcuts in file list</title>
+	<variablelist>
+		<varlistentry>
+			<term><keycap>Return</keycap></term>
+			<listitem><para>Execute default action (chdir, exec, run default app)</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><keycap>Backspace</keycap></term>
+			<listitem><para>Go to parent directory</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><keycap>Ctrl-F1</keycap></term>
+			<listitem><para>Quick change directory in left panel</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><keycap>Ctrl-F2</keycap></term>
+			<listitem><para>Quick change directory in right panel</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><keycap>F3</keycap></term>
+			<listitem><para>View</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><keycap>F4</keycap></term>
+			<listitem><para>Edit</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><keycap>F5</keycap></term>
+			<listitem><para>Copy</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><keycap>Ctrl-F5</keycap></term>
+			<listitem><para>Create symbolic link</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><keycap>F6</keycap></term>
+			<listitem><para>Move</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><keycap>F7</keycap></term>
+			<listitem><para>Make directory</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><keycap>F8</keycap></term>
+			<listitem><para>Delete</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><keycap>Ctrl-R</keycap></term>
+			<listitem><para>Reload/Refresh</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><keycap>Ctrl-C</keycap>, <keycap>Esc</keycap></term>
+			<listitem><para>Cancel loading</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><keycap>Alt-C</keycap></term>
+			<listitem><para>Quick change directory</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><keycap>+</keycap></term>
+			<listitem><para>Select all</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><keycap>-</keycap></term>
+			<listitem><para>Unselect all</para></listitem>
+		</varlistentry>
+		<varlistentry>
+			<term><keycap>Tab</keycap></term>
+			<listitem><para>Switch to other panel</para></listitem>
+		</varlistentry>
+	</variablelist>
+</sect1>
+							
+
+<!-- ========================== BUGS ========================= -->
+<sect1 id="gfm-bugs">
+ <title>Known Bugs and Limitations</title>
+
+ <itemizedlist mark="opencircle">
+    <listitem>
+     <para>
+			 gzip, etc. stuff doesn't work. but it doesn't work in nautilus too
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+			 smb VFS lists computers as .desktop files, which are unhandled now
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+			 uri in 'working-directory-entry' is unescaped like%20this%20
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+			 passwords are not stored in history of 'working-directory-entry'
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+			 cannot change owner/group
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+			 <keycap>Return</keycap> as 'execute default action' doesn't work very well with multiple files selected,
+			 it processes only file under cursor.
+     </para>
+    </listitem>
+ </itemizedlist>
+
+</sect1>
+
+<sect1 id="credits">
+ <title>Authors</title>
+  <para>
+   <application>Gnome FileManager</application> was written by Miroslav 'Mirco' Bajtoš
+   (<email>mirco@matfyz.cz</email>).
+  </para>
+
+  <para>
+   This manual was written by me too ;-)
+	</para>
+
+	<para>
+		Please do not hesitate and send me all comments and suggestions.
+	</para>
+
+  <!-- For translations: uncomment this:
+
+  <para>
+   Latin translation was done by ME
+   (<email>MYNAME@MYADDRESS</email>). Please send all  comments  and
+   suggestions regarding this translation to SOMEWHERE.
+  </para>
+
+  -->
+
+ </sect1>
+
+
+ <!-- ============= Application License ============================= -->
+
+ <sect1 id="gfm-license">
+  <title>License</title>
+  <para>
+   This program is free software; you can redistribute it and/or
+   modify it under the terms of the <citetitle>GNU General Public
+   License</citetitle> as published by the Free Software Foundation;
+   either version 2 of the License, or (at your option) any later
+   version.
+  </para>
+  <para>
+   This program is distributed in the hope that it will be useful, but
+   WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   <citetitle>GNU General Public License</citetitle> for more details.
+  </para>
+  <para>
+   A copy of the <citetitle>GNU General Public License</citetitle> is
+   included as an appendix to the <citetitle>GNOME Users
+   Guide</citetitle>.  You may also obtain a copy of the
+   <citetitle>GNU General Public License</citetitle> from the Free
+   Software Foundation by visiting <ulink type="http"
+   url="http://www.fsf.org">their Web site</ulink> or by writing to
+   <address>
+    Free Software Foundation, Inc.
+    <street>59 Temple Place</street> - Suite 330
+    <city>Boston</city>, <state>MA</state> <postcode>02111-1307</postcode>
+    <country>USA</country>
+   </address>
+  </para>
+ </sect1>
+</article>
+
+
+<!--
+# vi:ts=2:sw=2
+-->
